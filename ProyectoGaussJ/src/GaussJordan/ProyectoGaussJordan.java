@@ -39,7 +39,7 @@ public class ProyectoGaussJordan {
                 if (solucion == (int) solucion) {
                     System.out.printf("x%d = %d (%s)\n", i + 1, (int) solucion, fraccion);
                 } else {
-                    System.out.printf("x%d = %s (%s)\n", i + 1, fraccion, decimalAFraccion(solucion));
+                    System.out.printf("x%d = %.3f (%s)\n", i + 1, solucion, decimalAFraccion(solucion));
                 }
 
             }
@@ -154,7 +154,7 @@ public class ProyectoGaussJordan {
         int m = matrix.length;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (Math.abs(matrix[i][j]) < 1e-10) {
+                if (Math.abs(matrix[i][j]) < 1e-8) {
                     matrix[i][j] = 0;
                 }
                 String fraccion = decimalAFraccion(matrix[i][j]);
